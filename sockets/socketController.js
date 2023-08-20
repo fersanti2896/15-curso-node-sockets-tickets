@@ -16,7 +16,7 @@ const socketController = ( socket ) => {
         socket.broadcast.emit( 'tickets-pendientes', ticketControl.tickets.length );
     });
 
-    socket.on('atender-ticket', ({ escritorio }, callback) => {
+    socket.on( 'atender-ticket', ({ escritorio }, callback) => {
         if( !escritorio ) {
             return callback({
                 ok: false,
@@ -44,7 +44,7 @@ const socketController = ( socket ) => {
                 ticket
             })
         }
-    })
+    });
 }
 
 module.exports = {
